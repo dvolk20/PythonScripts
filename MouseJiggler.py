@@ -1,22 +1,33 @@
 ### Mouse Jiggler ###
-# pip install pyautogui
+
+# pip install pyautogui (first time only)
 
 import pyautogui
-print(pyautogui.size())
+import time
 
+#VARIABLES 
 go=1
+timeDelay = 2 #seconds
+dragAmount = 100 #pixles
+dragTime = .25 #seconds
+orig_x , orig_y = pyautogui.position() #get the starting mouse poition
+
+print("***START JIGGLE***")
+
 while go>0:
-    pyautogui.dragRel(100, 0, duration = 1) 
-    pyautogui.dragRel(0, 100, duration = 1) 
-    pyautogui.dragRel(-100, 0, duration = 1) 
-    pyautogui.dragRel(0, -100, duration = 1)
-#press ctl + alt + M to stop code from running
+    curr_x , curr_y = pyautogui.position() #get current mouse position
+    
+    if curr_x != orig_x:
+        print("***END JIGGLE***")
+        break
+    
+    pyautogui.moveRel(dragAmount, 0, duration = dragTime)
+    pyautogui.moveRel(-dragAmount, 0, duration = dragTime)  
+    time.sleep(timeDelay)
 
 
+#press ctl + alt + N to     START 
+#press ctl + alt + M to     FORCE STOP 
 
-asdlfjalsfdjlasdjflkajsf
-
-
-asdflkjasdflkj
 
 
