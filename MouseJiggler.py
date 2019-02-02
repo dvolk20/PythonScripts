@@ -9,7 +9,7 @@ import time
 go=1
 timeDelay = 2 #seconds
 dragAmount = 100 #pixles
-dragTime = .25 #seconds
+dragTime = .1 #seconds
 orig_x , orig_y = pyautogui.position() #get the starting mouse poition
 
 print("***START JIGGLE***")
@@ -18,6 +18,7 @@ while go>0:
     curr_x , curr_y = pyautogui.position() #get current mouse position
     
     if curr_x != orig_x:
+        #stops jiggler if mouse is manually moved on the screen
         print("***END JIGGLE***")
         break
     
