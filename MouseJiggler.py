@@ -33,3 +33,5 @@ while go>0:
 
 
 
+#press ctl + alt + N to START
+#press ctl + alt + M to STOP 
